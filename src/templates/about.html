@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+	{% block content %} 
+		<h1> {{title|capfirst|title}}</h1>
+		<h2>common template</h2>
+		{{ my_html|slugify }}
+
+		<p> {{ my_number }}, 
+		{{my_list}} </p>
+
+		<ul>
+			<li>Item 1</li>
+			<li>Item 2</li>
+		</ul>
+		<ul>
+			{% for sumith in my_list %}
+				{% if sumith == 143 %}
+				<li> {{forloop.counter }} - {{sumith|add:22 }} </li>
+				{% elif sumith == "Sumith" %}
+				<li> This is not network </li>
+				{% else %}
+				<li> {{forloop.counter}} - {{sumith}} </li>
+				{% endif %}
+				
+			{% endfor %}
+		</ul>
+	{% endblock %}
+
